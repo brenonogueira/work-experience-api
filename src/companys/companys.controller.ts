@@ -30,6 +30,11 @@ export class CompanysController {
     return this.companysService.findAll();
   }
 
+  @Get('total')
+  CountCompany() {
+    return this.companysService.CountCompanies();
+  }
+
   @UseGuards(JwtAuthGuard)
   @Get(':id')
   findOne(@Param('id') id: string) {

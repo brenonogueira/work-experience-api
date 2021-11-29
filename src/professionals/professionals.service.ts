@@ -15,6 +15,14 @@ export class ProfessionalsService {
     return await this.prismaService.professionals.findMany();
   }
 
+  async CountProfessionals() {
+    const professionals = await this.prismaService.professionals.findMany();
+    // console.log(professionals.length);
+    return {
+      total: professionals.length,
+    };
+  }
+
   async findOne(id: number) {
     return await this.prismaService.professionals.findUnique({
       where: { id },

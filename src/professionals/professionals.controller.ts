@@ -30,6 +30,11 @@ export class ProfessionalsController {
     return this.professionalsService.findAll();
   }
 
+  @Get('total')
+  CountProfessionals() {
+    return this.professionalsService.CountProfessionals();
+  }
+
   @UseGuards(JwtAuthGuard)
   @Get(':id')
   findOne(@Param('id') id: string) {

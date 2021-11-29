@@ -15,6 +15,14 @@ export class CompanysService {
     return await this.prismaService.companys.findMany();
   }
 
+  async CountCompanies() {
+    const companies = await this.prismaService.companys.findMany();
+    // console.log(companies.length);
+    return {
+      total: companies.length,
+    };
+  }
+
   async findOne(id: number) {
     return await this.prismaService.companys.findUnique({
       where: { id },
