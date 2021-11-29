@@ -12,7 +12,9 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { CompanysService } from './companys.service';
 import { CreateCompanyDto } from './dto/create-company.dto';
 import { UpdateCompanyDto } from './dto/update-company.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Companys')
 @Controller('v1/companys')
 export class CompanysController {
   constructor(private readonly companysService: CompanysService) {}
