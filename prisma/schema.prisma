@@ -13,7 +13,7 @@ generator client {
 model users {
   id         Int      @id @default(autoincrement()) @db.UnsignedInt
   name       String   @db.VarChar(255)
-  email      String   @unique @db.VarChar(191) 
+  email      String   @unique @db.VarChar(191)
   password   String   @db.VarChar(255)
   created_at DateTime @default(now()) @db.Timestamp(0)
   updated_at DateTime @default(now()) @db.Timestamp(0)
@@ -32,10 +32,19 @@ model professionals {
 }
 
 model companys {
-  id                   Int    @id @default(autoincrement()) @db.UnsignedInt
-  name                 String @db.VarChar(255)
-  email                String @db.VarChar(255)
-  previous_description String @db.VarChar(255)
-  created_at      DateTime @default(now()) @db.Timestamp(0)
-  updated_at      DateTime @default(now()) @db.Timestamp(0)
+  id                   Int      @id @default(autoincrement()) @db.UnsignedInt
+  name                 String   @db.VarChar(255)
+  email                String   @db.VarChar(255)
+  previous_description String   @db.VarChar(255)
+  created_at           DateTime @default(now()) @db.Timestamp(0)
+  updated_at           DateTime @default(now()) @db.Timestamp(0)
+}
+
+model contact {
+  id         Int      @id @default(autoincrement()) @db.UnsignedInt
+  name       String   @db.VarChar(255)
+  email      String   @db.VarChar(255)
+  message    String   @db.Text
+  created_at DateTime @default(now()) @db.Timestamp(0)
+  updated_at DateTime @default(now()) @db.Timestamp(0)
 }
